@@ -17,7 +17,7 @@ RUN rm ./target/release/deps/aoba*
 
 ADD . ./
 
-RUN cargo build --release
+RUN cargo build --release --verbose
 
 # ----------------- #
 # RUNTIME CONTAINER #
