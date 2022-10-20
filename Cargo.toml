@@ -1,0 +1,9 @@
+[package]
+name = "aoba"
+version = "0.1.0"
+authors = ["Hamuko"]
+edition = "2021"
+
+[dependencies]
+rocket = "0.5.0-rc.1"
+serde = "1.0.132"
