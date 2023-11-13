@@ -2,7 +2,7 @@
 # BUILD CONTAINER #
 # --------------- #
 
-FROM rust:1.66 as build
+FROM rust:1.73 as build
 
 ENV CARGO_NET_GIT_FETCH_WITH_CLI=true
 
@@ -25,12 +25,13 @@ RUN cargo build --release --verbose
 # RUNTIME CONTAINER #
 # ----------------- #
 
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
-    pip3 install -U gallery-dl && \
-    pip3 install -U youtube_dl
+    pip3 install -U --break-system-packages gallery-dl && \
+    pip3 install -U --break-system-packages youtube_dl && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -g 1000 aoba && useradd -g aoba aoba
 
