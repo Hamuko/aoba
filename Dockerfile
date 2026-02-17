@@ -2,7 +2,7 @@
 # BUILD CONTAINER #
 # --------------- #
 
-FROM rust:1.86 AS build
+FROM rust:1.93 AS build
 
 ENV CARGO_NET_GIT_FETCH_WITH_CLI=true
 
