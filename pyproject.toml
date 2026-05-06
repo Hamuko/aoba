@@ -22,3 +22,6 @@ extend-select = [
     "FAST",
     "I",
 ]
+
+[tool.uv]
+exclude-newer = "7 days"
